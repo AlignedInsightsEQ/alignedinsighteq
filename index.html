@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlignedInsightsEQ | The Alignment Codex</title>
+    
+    <!-- Google Fonts: Playwrite NG Modern, Bellota, Gayathri -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bellota:wght@300;400;700&family=Gayathri:wght@100;400;700&family=Playwrite+NG+Modern:wght@100..400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Background Layers -->
+    <div class="bg-layer"></div>
+    <canvas id="stardust-canvas"></canvas>
+
+    <main>
+        <!-- 1. HEADER -->
+        <header class="main-header">
+            <nav class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#codex">The Codex</a>
+                <a href="#demo">The Demo</a>
+            </nav>
+            <div class="logo-container">
+                <h1 class="logo-text">AlignedInsightsEQ</h1>
+            </div>
+        </header>
+
+        <!-- 2. HERO SECTION -->
+        <section id="home" class="hero-section">
+            <h2 class="hero-tagline gradient-text-flow">Weaving several selected cosmologies into one unified translation</h2>
+            <h1 class="hero-headline">A Symbolic Translation Layer for the Multidimensional Self</h1>
+            
+            <a href="#checkout-builder" class="btn-tactile hero-btn">Discover your top four non-negotiable anchors for the next 5 years. Access The Aligned Horizon.</a>
+        </section>
+
+        <!-- 3. THE INTRO -->
+        <section class="content-box intro-section">
+            <p>It is easy to marvel at the beauty of life when everything flows with ease. Friction feels like a learning experience, dissolving as quickly as it comes. Our body and brain are locked in sync, bringing peace and resolution. We call this alignment, coherence, or integrated wisdom.</p>
+            <p class="alternate-text">But what about when it doesn't feel that way?</p>
+            <p>What does alignment look like when you are overwhelmed by the noise of daily life, wearing an identity mask that no longer fits, or trapped in repetitive emotional loops?</p>
+            <p>The Alignment Codex is here to help you reach true alignment. We do not diagnose or tell you who you are—that is your journey. Instead, we bring your adaptive conditioning strategies into awareness so that what was once a shadow can be brought into the light. We highlight your harmonic signatures, build self-trust, and provide clinically inspired, interactive integration tools.</p>
+            <p>The purpose of the Codex is to give you the methodology to hold two contradictory perspectives as two truths at the same time—expanding your perception, building new neural pathways, and showing you how your greatest friction points can become your most harmonious signatures.</p>
+        </section>
+
+        <!-- 4. THE PRIVACY & FEATURES BRIDGE -->
+        <section class="content-box features-bridge">
+            <h2 class="section-subtitle gradient-text-flow">Live. Local. Interactive. Privacy-Focused.</h2>
+            <p class="features-intro">At AlignedInsightsEQ, we value your sovereignty. That is why every Codex is delivered as a single, self-contained web application that opens directly in your browser.</p>
+            
+            <div class="features-grid">
+                <div class="feature-item">
+                    <h3>🌐 100% Local & Browser-Based</h3>
+                    <p>A live, interactive experience that lives entirely on your device. No cloud connections, no servers, no logins. Your data stays yours.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>🔮 Synthesis Over Fragmentation</h3>
+                    <p>We don't just stack systems. We translate them. We isolate Convergent Truths and reframe Opposing Self-States as unified spectrums of creative power.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>🧠 Clinical Integration & Embodiment</h3>
+                    <p>We don't just hand you a stack of charts and tell you to figure it out. We provide therapeutically inspired tools to transform passive reading into active, lived transmutation.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>🦋 Identity Fluidity</h3>
+                    <p>We don't put you in a rigid box. The Codex invites you to step outside of static labels and experience life within a fluid, evolving identity.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. FREQUENCY SLIDER -->
+        <section class="frequency-section">
+            <div class="spectrum-container">
+                <div class="spectrum-labels">
+                    <span class="spectrum-label active" data-index="0">Orientation</span>
+                    <span class="spectrum-label" data-index="1">Focus</span>
+                    <span class="spectrum-label" data-index="2">Pattern</span>
+                    <span class="spectrum-label" data-index="3">Dimension</span>
+                </div>
+                <div class="spectrum-track" id="spectrumTrack">
+                    <div class="spectrum-notch" id="spectrumNotch"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. PRODUCT CARDS -->
+        <section class="products-section">
+            <!-- Product 1: Horizon -->
+            <div class="codex-card active-card" data-product="0">
+                <div class="card-image-wrapper">
+                    <div class="image-placeholder">Image: display-aligned-horizon.png</div>
+                </div>
+                <div class="card-content">
+                    <div class="title-price-row">
+                        <h3 class="card-title">Aligned Horizon</h3>
+                        <span class="card-price">Free</span>
+                    </div>
+                    <p class="card-hook">A quiet, steadying sanctuary for moments when you feel overstimulated or untethered. This strategic blueprint breaks your next five years into distinct phases.</p>
+                    <div class="card-deep-dive">
+                        <p>It provides four foundational baseline anchors derived from your unique design to protect your peace, restore your equilibrium, and give your nervous system immediate, unshakeable safety as you navigate what comes next.</p>
+                    </div>
+                    <button class="btn-tactile select-product-btn" data-select="horizon">Select & Customize</button>
+                </div>
+            </div>
+
+            <!-- Product 2: Mini -->
+            <div class="codex-card" data-product="1">
+                <div class="card-image-wrapper">
+                    <div class="image-placeholder">Image: display-alignment-mini.png</div>
+                </div>
+                <div class="card-content">
+                    <div class="title-price-row">
+                        <h3 class="card-title">Alignment Mini</h3>
+                        <span class="card-price">$15</span>
+                    </div>
+                    <p class="card-hook">Gentle, high-precision clarity for one specific corner of your life. Sometimes you don't need the whole map; you just need to know what is happening in the room you are standing in.</p>
+                    <div class="card-deep-dive">
+                        <p>Whether you are seeking ease in your relational dynamics, steady direction in your career evolution, or space for a creative bottleneck to dissolve, this focused lens illuminates both your inherited gifts and your earned strengths to restore natural, effortless momentum.</p>
+                    </div>
+                    <button class="btn-tactile select-product-btn" data-select="mini">Select & Customize</button>
+                </div>
+            </div>
+
+            <!-- Product 3: Snapshot -->
+            <div class="codex-card" data-product="2">
+                <div class="card-image-wrapper">
+                    <div class="image-placeholder">Image: display-alignment-snapshot.png</div>
+                </div>
+                <div class="card-content">
+                    <div class="title-price-row">
+                        <h3 class="card-title">Alignment Snapshot</h3>
+                        <span class="card-price">$51</span>
+                    </div>
+                    <p class="card-hook">A breathtaking, panoramic view showing how the golden thread of your life weaves through every area at once. It builds your confidence by balancing your inherited wisdom with your earned resilience.</p>
+                    <div class="card-deep-dive">
+                        <p>It creates a complete mirror of your personal architecture—balancing your inherited harmonic signatures with your earned harmonic signatures. Alongside the adaptive survival strategies that served you along the way, it brings the most significant data points of your current reality into sharp focus.</p>
+                    </div>
+                    <button class="btn-tactile select-product-btn" data-select="snapshot">Select & Customize</button>
+                </div>
+            </div>
+
+            <!-- Product 4: Codex -->
+            <div class="codex-card" data-product="3">
+                <div class="card-image-wrapper">
+                    <div class="image-placeholder">Image: display-alignment-codex.png</div>
+                </div>
+                <div class="card-content">
+                    <div class="title-price-row">
+                        <h3 class="card-title">Alignment Codex</h3>
+                        <span class="card-price">$87</span>
+                    </div>
+                    <p class="card-hook">An invitation into complete, unarmored self-reverence. This multidimensional journey synthesizes your frameworks into one harmonious narrative.</p>
+                    <div class="card-deep-dive">
+                        <p>It unfolds every layer of your existence simultaneously, weaving your birth design across selected inquiry frameworks. Paired with somatic grounding prompts, nervous system regulation utilities, and a 100% private, serverless HTML application built strictly for your device, it empowers you to live as your whole, integrated self.</p>
+                    </div>
+                    <button class="btn-tactile select-product-btn" data-select="codex">Select & Customize</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. CHECKOUT BUILDER -->
+        <section id="checkout-builder" class="checkout-container">
+            <h2 class="checkout-title">Customize Your Order</h2>
+            <p class="checkout-subtitle">Select your Codex and add any Companion deep-dives to your journey.</p>
+
+            <div class="checkout-steps">
+                <!-- Step 1 -->
+                <div class="step-group">
+                    <h3>1. Choose Your Codex</h3>
+                    <label class="radio-label">
+                        <input type="radio" name="codex_type" value="0" data-name="Aligned Horizon">
+                        <span>Aligned Horizon (Free)</span>
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="codex_type" value="15" data-name="Alignment Mini">
+                        <span>Alignment Mini ($15)</span>
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="codex_type" value="51" data-name="Alignment Snapshot">
+                        <span>Alignment Snapshot ($51)</span>
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="codex_type" value="87" data-name="Alignment Codex">
+                        <span>Alignment Codex ($87)</span>
+                    </label>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="step-group">
+                    <h3>2. Add Codex Companions ($24 each)</h3>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="companion" value="24" data-name="Career Companion">
+                        <span>Career Companion</span>
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="companion" value="24" data-name="Relational Companion">
+                        <span>Relational Companion</span>
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="companion" value="24" data-name="Creative Companion">
+                        <span>Creative Companion</span>
+                    </label>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="checkout-total">
+                    <h3>Total: $<span id="totalPrice">0</span></h3>
+                    <button class="btn-tactile" id="checkoutBtn" disabled>Proceed to Secure Checkout</button>
+                    <p class="error-text" id="errorText">Please select a Codex to continue.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. BANNER -->
+        <section class="banner-section">
+            <h2 class="gradient-text-flow">Transforms complexity into clarity</h2>
+        </section>
+
+        <!-- 9. DEMO SECTION PLACEHOLDER -->
+        <section id="demo" class="demo-section">
+            <div class="content-box dark-glass">
+                <h2 class="section-title">See the Codex in motion.</h2>
+                <p class="features-intro">A live look inside. The demo shows you the interactive pieces at work — the natal chart, the synthesis insights, and the tools that bring the reading into the body.</p>
+                <div class="demo-placeholder">
+                    <p>(Interactive Demo Coming Soon)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. BRAND STORY -->
+        <section id="story" class="story-section">
+            <div class="story-photo-placeholder">Image: photo.png</div>
+            <div class="dna-placeholder">Image: dna-helix.png</div>
+            
+            <div class="content-box story-content">
+                <h2 class="section-title">The Story Behind AlignedInsightsEQ</h2>
+                <p>At birth, I was given the name Jessicia.</p>
+                <p>Jessicia carried me through many years of misalignment, confusion, and learning everything by learning what not to do first. I felt the full weight of being misunderstood and lost, weaving in and out of symbolic frameworks, spiritual systems, and psychological modalities like someone drinking water in a desert.</p>
+                <p>I became an escapist, running away from any emotion I didn't enjoy—pushing down pain and frantically searching for warmth and happiness outside of myself. I convinced myself I was ignoring those undesirable emotions, while the chaos and scattered thoughts consistently nagged at me in the back of my mind. They showed up as unhealthy coping, projecting, and persistent anxiety that I wasn't allowing myself to address. I pushed the blame onto my upbringing and past trauma approaching adulthood, not taking accountability for my responsibility as an adult to do the hard work. So I choose to take action, I choose to take control over my life and most importantly my future. Taking myself from victim to sovereign creator.</p>
+                <p class="alternate-text">I don't know what happens when we leave this planet. But I do know that if consciousness is the only thing that remains after death, I want my inner landscape—my mind—to be a beautiful place to spend eternity. And I realized that building that requires doing the hard, uncomfortable work.</p>
+                <p>So, I began doing the work. I brought those things demanding my attention in the back of my mind into awareness, with compassion and without judgment, the exact same way I would approach a loved one confiding in me. I shifted through the muck I had allowed to accumulate and distort the way I perceived my reality. With every transmuted unhealthy conditioned pattern, adaptive strategy, or thought distortion, my once fragile lens became a magnifying glass. With that awareness, I facilitated change. And following that change came more change—in my perspective, my character, and my overall reality.</p>
+                <p>Slowly, I began to no longer relate or resonate with the version of myself I once thought of as "who I am becoming." I became intimately familiar with the fluidity of human identity. I learned the importance of accepting, honoring, and grieving that old version of myself, without getting locked into the grief or creating another box for myself to live in.</p>
+                <p>This is where my name evolution reflects my internal one.</p>
+                <p>Jessicia is not removed; she evolved. She is the foundation that transmuted into my found clarity: Yeshi. I honor Jessicia with the understanding and compassion she worked so hard to find. Where Jessicia collected fragments of insight, unsure how to assemble them, Yeshi holds the entire picture. Yeshi is the grounded, clear-headed identity I earned through the work.</p>
+                <p>And then there is Cherry Pineapple Upsidedown Starshine. She is the playful embodiment of my creative expression, my newfound self-love, and the freedom that comes when you stop taking life so seriously.</p>
+                <p>This evolution is why the Alignment Codex is rooted in Identity Fluidity. We are not meant to stay in the same box forever. The Codex is designed to give the power back to you. You are a living spectrum. You are allowed to change, to contradict yourself, and to grow without feeling like you are losing who you are.</p>
+                
+                <h3>The Experiment</h3>
+                <p>I’ve always valued evidence and critical thinking. I wasn't interested in believing something simply because it sounded meaningful; I wanted to examine whether the patterns I perceived could withstand scrutiny. Over many months, I conducted an ongoing personal experiment. Without providing any chart data, I asked AI models to analyze me purely through conversation—to identify my recurring behavioral patterns, emotional tendencies, and blind spots. I questioned every conclusion. Only after did I introduce my chart information. The overlap was striking.</p>
+                
+                <h3>Building My Own Way Out</h3>
+                <p>I started building this Codex for my own personal reasons. I was learning the language of these frameworks while simultaneously experiencing the overwhelming feelings they were supposed to explain. I just needed a way to organize the data to understand myself. I started writing down the recurring themes, finding the overlaps, and translating the esoteric jargon into something my nervous system could actually process.</p>
+                <p>In building this translation for myself, I realized I had created something that could help others.</p>
+                <p>I don’t believe any single system can fully define a person. But when independent frameworks repeatedly illuminate the same themes, they invite us to pause, reflect, and ask meaningful questions about ourselves.</p>
+                <p><strong>Your Codex is a map of your own evolution.</strong></p>
+                <p>You don't need to collect another chart or fit into another box. You just need the language to understand the one you already have.</p>
+            </div>
+            <div class="mascot-placeholder">Image: mascot.png</div>
+        </section>
+
+        <!-- 11. FINAL CTA -->
+        <section class="final-cta">
+            <h2>Still deciding where to start?</h2>
+            <div class="cta-buttons">
+                <a href="#checkout-builder" class="btn-tactile select-product-btn" data-select="mini">Focus on one area — The Alignment Mini ($15)</a>
+                <a href="#checkout-builder" class="btn-tactile select-product-btn" data-select="codex">Explore the Full Codex ($87)</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- 12. FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#">Instagram</a>
+                <a href="#">TikTok</a>
+                <a href="#">alignedinsightseq@gmail.com</a>
+            </div>
+            <div class="footer-logo">AlignedInsightsEQ</div>
+            <p class="legal-text">The Alignment Codex is a reflective symbolic tool and does not replace professional medical or psychological care. If you are experiencing a crisis, please contact local emergency services or a mental health hotline. © 2024 AlignedInsightsEQ. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
