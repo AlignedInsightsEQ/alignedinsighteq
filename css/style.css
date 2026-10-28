@@ -1,0 +1,190 @@
+/* =========================================
+   ALIGNEDINSIGHTSEQ - PRISM & PEARL (V3.2)
+========================================= */
+
+:root {
+    --opw: #F9F5FF; --blp: #FDE8E9; --mst: #E6D7F0; --lvm: #D4C6E8; 
+    --prc: #B9D6F2; --sli: #552266; --vrg: #1A1840;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Gayathri', sans-serif;
+    font-weight: 300;
+    color: var(--sli);
+    background-color: var(--opw);
+    overflow-x: hidden;
+    line-height: 1.8;
+}
+
+/* TYPOGRAPHY */
+h1, h2, h3, .logo-text { font-family: 'Playwrite NG Modern', cursive; font-weight: 100; letter-spacing: 1px; color: var(--sli); }
+.card-price, .nav-links a, .step-group h3, .checkout-total h3, .btn-tactile { font-family: 'Bellota', cursive; font-weight: 400; }
+.alternate-text { font-style: italic; color: var(--lvm); font-size: 1.2rem; margin: 1.5rem 0; font-weight: 100; }
+
+/* THE FLUID PRISM BACKGROUND */
+.bg-layer {
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -2;
+    background: 
+        radial-gradient(circle at 40% 30%, var(--opw) 0%, transparent 40%),
+        radial-gradient(circle at 60% 20%, var(--blp) 0%, transparent 50%),
+        radial-gradient(circle at 30% 60%, var(--mst) 0%, transparent 50%),
+        radial-gradient(circle at 70% 70%, var(--prc) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, var(--lvm) 0%, transparent 60%),
+        linear-gradient(135deg, var(--opw), var(--mst), var(--prc), var(--vrg));
+    background-size: 100% 100%;
+    animation: prismShift 30s ease-in-out infinite alternate;
+}
+
+@keyframes prismShift {
+    0% { background-position: 0% 0%, 100% 0%, 0% 100%, 100% 100%, 50% 50%, 0% 0%; }
+    100% { background-position: 10% 10%, 90% 10%, 10% 90%, 90% 90%, 40% 60%, 100% 100%; }
+}
+
+/* STAR CANVAS */
+#stardust-canvas { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; pointer-events: none; }
+
+/* LAYOUT */
+main { position: relative; z-index: 1; padding: 2rem; max-width: 900px; margin: 0 auto; }
+section { margin-bottom: 6rem; }
+
+/* HEADER */
+.main-header { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; margin-bottom: 4rem; }
+.nav-links a { color: var(--sli); text-decoration: none; margin-right: 1.5rem; font-size: 1.1rem; transition: color 0.3s; }
+.nav-links a:hover { color: var(--lvm); }
+.logo-container { display: flex; align-items: center; gap: 15px; }
+.logo-img { height: 40px; width: auto; }
+.logo-text { font-size: 1.5rem; }
+
+/* HERO */
+.hero-section { text-align: center; margin-bottom: 6rem; padding-top: 4rem; }
+.hero-tagline { font-size: 1.4rem; margin-bottom: 1.5rem; letter-spacing: 1px; color: var(--sli); }
+.hero-headline { font-size: 3.5rem; line-height: 1.2; margin-bottom: 3rem; }
+
+.gradient-text-flow {
+    background: linear-gradient(90deg, var(--lvm), var(--prc), var(--blp), var(--lvm));
+    color: transparent; -webkit-background-clip: text; background-clip: text; 
+}
+
+/* THE OPAL BORDER CONTAINERS (Soft, Non-Metallic) */
+.content-box, .codex-card, .checkout-container {
+    background: rgba(249, 245, 255, 0.4); 
+    backdrop-filter: blur(20px); 
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 16px; 
+    padding: 3rem; 
+    position: relative; 
+    margin-bottom: 2rem;
+    color: var(--sli);
+    border: 1.5px solid transparent;
+    background-clip: padding-box;
+    box-shadow: 0 10px 40px rgba(85, 34, 102, 0.08);
+}
+
+/* The soft, diffused opal glow */
+.content-box::before, .codex-card::before, .checkout-container::before {
+    content: '';
+    position: absolute;
+    top: -1.5px; left: -1.5px; right: -1.5px; bottom: -1.5px;
+    z-index: -1;
+    border-radius: 18px;
+    background: conic-gradient(from var(--angle), rgba(253,232,233,0.6), rgba(230,215,240,0.6), rgba(185,214,242,0.6), rgba(253,232,233,0.6));
+    animation: spinBorder 8s linear infinite; 
+    filter: blur(4px); 
+}
+@property --angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+}
+@keyframes spinBorder {
+    to { --angle: 360deg; }
+}
+
+/* INTRO & FEATURES */
+.intro-section p { margin-bottom: 1.5rem; font-size: 1.1rem; }
+.features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem; }
+.feature-item h3 { color: var(--sli); margin-bottom: 0.5rem; font-family: 'Bellota', cursive; font-size: 1.2rem; }
+.section-subtitle { font-size: 1.8rem; margin-bottom: 1rem; text-align: center; color: var(--sli); }
+
+/* FREQUENCY SLIDER */
+.frequency-section { text-align: center; max-width: 800px; margin: 0 auto 6rem auto; }
+.spectrum-labels { display: flex; justify-content: space-between; margin-bottom: 15px; }
+.spectrum-label { font-family: 'Bellota', cursive; font-size: 1.2rem; color: var(--sli); font-weight: 400; cursor: pointer; transition: color 0.3s; }
+.spectrum-label.active, .spectrum-label:hover { color: var(--lvm); text-shadow: 0 0 10px rgba(212, 198, 232, 0.5); }
+.spectrum-track { width: 100%; height: 4px; background: rgba(230,215,240,0.5); border-radius: 3px; position: relative; cursor: pointer; }
+.spectrum-notch { width: 20px; height: 20px; background: var(--opw); border: 2px solid var(--prc); border-radius: 50%; position: absolute; top: 50%; left: 0%; transform: translate(-50%, -50%); box-shadow: 0 0 15px var(--prc); transition: left 0.3s ease, transform 0.2s ease; cursor: grab; }
+.spectrum-notch:active { cursor: grabbing; transform: translate(-50%, -50%) scale(1.2); }
+
+/* PRODUCT CARDS */
+.products-section { display: flex; flex-direction: column; gap: 3rem; margin-bottom: 6rem; }
+.codex-card { opacity: 0.7; transform: scale(0.98); transition: all 0.5s ease; padding: 0; overflow: hidden; }
+.codex-card.active-card { opacity: 1; transform: scale(1); box-shadow: 0 12px 40px rgba(185, 214, 242, 0.4), inset 0 0 0 2px var(--prc); }
+.card-image-wrapper img { width: 100%; height: auto; display: block; border-bottom: 1px solid rgba(226, 232, 240, 0.5); }
+.card-content { padding: 2rem; }
+.title-price-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+.card-title { font-size: 1.8rem; }
+.card-price { font-size: 1.5rem; color: var(--sli); font-weight: bold; }
+.card-hook { font-size: 1.1rem; color: var(--sli); margin-bottom: 1.5rem; }
+.card-deep-dive { font-size: 0.95rem; border-top: 1px solid rgba(226, 232, 240, 0.5); padding-top: 1rem; margin-bottom: 2rem; color: var(--sli); }
+
+/* CHECKOUT BUILDER */
+.checkout-container { max-width: 700px; margin: 0 auto 6rem auto; }
+.checkout-title { text-align: center; color: var(--sli); font-size: 2rem; margin-bottom: 0.5rem; }
+.checkout-subtitle { text-align: center; margin-bottom: 2rem; color: var(--lvm); }
+.step-group { margin-bottom: 2rem; border-bottom: 1px solid rgba(226, 232, 240, 0.5); padding-bottom: 1.5rem; }
+.step-group h3 { font-size: 1.3rem; color: var(--sli); margin-bottom: 1rem; }
+.radio-label, .checkbox-label { display: flex; align-items: center; gap: 15px; font-size: 1.1rem; margin-bottom: 1rem; cursor: pointer; color: var(--sli); }
+.radio-label input, .checkbox-label input { width: 22px; height: 22px; accent-color: var(--lvm); cursor: pointer; }
+.checkout-total { text-align: center; margin-top: 2rem; }
+.checkout-total h3 { font-size: 2rem; color: var(--sli); margin-bottom: 1rem; }
+.error-text { color: #DB88A4; font-size: 0.9rem; margin-top: 1rem; display: block; }
+
+/* PRISM BUTTONS (Soft Opal) */
+.btn-tactile {
+    display: inline-block; padding: 15px 30px; 
+    background: linear-gradient(135deg, rgba(249,245,255,0.9), rgba(185,214,242,0.7)); 
+    color: var(--sli); 
+    border: 1px solid rgba(255,255,255,0.4); 
+    border-radius: 30px; font-family: 'Bellota', cursive; font-size: 1.2rem; font-weight: 400; cursor: pointer; text-decoration: none; text-align: center;
+    box-shadow: 0 4px 15px rgba(185, 214, 242, 0.4); 
+    transition: all 0.2s ease;
+}
+.btn-tactile:hover { 
+    box-shadow: 0 8px 25px rgba(185, 214, 242, 0.6); 
+    transform: translateY(-2px); 
+}
+.btn-tactile:active { 
+    transform: translateY(2px); 
+    box-shadow: 0 2px 10px rgba(185, 214, 242, 0.4); 
+}
+.btn-tactile:disabled { background: rgba(230,215,240,0.5); color: #A0AEC0; cursor: not-allowed; opacity: 0.7; box-shadow: none; transform: none; }
+.hero-btn { margin-top: 1rem; }
+.select-product-btn { width: 100%; }
+
+/* DEMO & STORY IMAGES */
+.demo-placeholder { height: 200px; display: flex; align-items: center; justify-content: center; border: 2px dashed var(--lvm); border-radius: 8px; margin-top: 1rem; color: var(--sli); font-family: 'Bellota', cursive; }
+.story-photo { width: 100%; max-width: 400px; height: auto; border-radius: 50%; display: block; margin: 0 auto 2rem auto; border: 3px solid var(--opw); box-shadow: 0 0 20px rgba(226, 215, 240, 0.5); }
+.dna-image { width: 100%; max-width: 600px; height: auto; display: block; margin: 2rem auto; border-radius: 12px; }
+.mascot-img { width: 100%; max-width: 400px; height: auto; display: block; margin: 2rem auto 0 auto; border-radius: 12px; }
+
+/* CTA & FOOTER */
+.banner-section { text-align: center; margin-bottom: 6rem; }
+.banner-section h2 { font-size: 2.5rem; color: var(--sli); }
+.final-cta { text-align: center; margin-bottom: 6rem; }
+.final-cta h2 { font-size: 2rem; margin-bottom: 2rem; color: var(--sli); }
+.cta-buttons { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; }
+footer { text-align: center; padding: 3rem; border-top: 1px solid rgba(226, 232, 240, 0.5); }
+.footer-links { margin-bottom: 1.5rem; }
+.footer-links a { color: var(--sli); margin: 0 15px; text-decoration: none; font-weight: 400; }
+.footer-logo { font-family: 'Playwrite NG Modern', cursive; font-size: 1.5rem; margin-bottom: 1rem; color: var(--sli); }
+.legal-text { font-size: 0.8rem; color: var(--lvm); max-width: 600px; margin: 0 auto; }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .features-grid { grid-template-columns: 1fr; }
+    .hero-headline { font-size: 2.5rem; }
+    .main-header { flex-direction: column; gap: 1rem; }
+    .cta-buttons { flex-direction: column; }
+}
