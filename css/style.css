@@ -1,5 +1,5 @@
 /* =========================================
-   ALIGNEDINSIGHTSEQ - MASTER CSS (V10.0)
+   ALIGNEDINSIGHTSEQ - MASTER CSS (V12.0)
 ========================================= */
 
 :root {
@@ -23,14 +23,23 @@ body {
 h1, h2, h3, .logo-text { font-family: 'Gabriela', serif; font-weight: 400; letter-spacing: 0.5px; }
 .card-price, .nav-links a, .step-group h3, .checkout-total h3, .btn-tactile, .feature-item h3 { font-family: 'Bellota', cursive; font-weight: 400; }
 
-/* THE EXACT GRADIENT */
+/* THE EXACT META GRADIENT (LOCKED TO SCREEN) */
 .bg-layer {
     position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -2;
-    background: linear-gradient(to bottom,
-      #F9F5FF 0%, #FDFCFA 15%, #FCE4E4 25%, #FDE8E9 35%,
-      #E8A2B0 45%, #E6D7F0 55%, #D4DEF4 65%, #9DB4C8 75%,
-      #101739 90%, #0F0E1A 100%
+    background: linear-gradient(
+        to bottom,
+        #F9F5FF 0%, 
+        #FDFCFA 15%, 
+        #FCE4E4 25%, 
+        #FDE8E9 35%, 
+        #E8A2B0 45%, 
+        #E6D7F0 55%, 
+        #D4DEF4 65%, 
+        #9DB4C8 75%, 
+        #101739 90%, 
+        #0F0E1A 100%
     );
+    background-attachment: fixed; /* THIS IS THE MAGIC FIX */
 }
 
 /* STAR CANVAS */
@@ -123,7 +132,7 @@ section { margin-bottom: 6rem; }
 .card-price { font-size: 1.5rem; color: var(--lilac); }
 .card-hook { font-size: 1.1rem; color: #F9F5FF; margin-bottom: 1.5rem; }
 .card-deep-dive { font-size: 0.95rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem; margin-bottom: 2rem; color: var(--lilac); }
-.btn-container { text-align: center; } /* Centers the button */
+.btn-container { text-align: center; }
 
 /* BUTTONS */
 .btn-tactile {
