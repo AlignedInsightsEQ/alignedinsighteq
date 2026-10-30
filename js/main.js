@@ -25,32 +25,54 @@ document.addEventListener("DOMContentLoaded", () => {
         animate();
     }
 
-    // --- 2. FREQUENCY SLIDER ---
+    // --- 2. FREQUENCY SLIDER & POPUP ---
     const track = document.getElementById("spectrumTrack");
     const notch = document.getElementById("spectrumNotch");
     const labels = document.querySelectorAll(".spectrum-label");
     const cards = document.querySelectorAll(".codex-card");
+    const popup = document.getElementById("sliderPopup");
+    const popupTitle = document.getElementById("popupTitle");
+    const popupImg = document.getElementById("popupImg");
+    const popupBtn = document.getElementById("popupBtn");
     
+    const codexData = [
+        { name: "Aligned Horizon", img: "assets/display-alignedhorizon.png", target: "product-0" },
+        { name: "Alignment Mini", img: "assets/display-alignmentmini.png", target: "product-1" },
+        { name: "Alignment Snapshot", img: "assets/display-alignmentsnapshot.png", target: "product-2" },
+        { name: "Alignment Codex", img: "assets/display-alignmentcodex.png", target: "product-3" }
+    ];
+
     if (track && notch) {
         let isDragging = false;
         const totalSteps = labels.length - 1;
+        let currentIndex = 0;
 
         function setActiveIndex(index) {
-            index = Math.max(0, Math.min(index, totalSteps));
-            const percentage = (index / totalSteps) * 100;
+            currentIndex = Math.max(0, Math.min(index, totalSteps));
+            const percentage = (currentIndex / totalSteps) * 100;
             notch.style.left = `${percentage}%`;
-            labels.forEach((label, i) => label.classList.toggle("active", i === index));
-            cards.forEach((card, i) => {
-                card.classList.toggle("active-card", i === index);
-                if (i === index) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            });
+            
+            labels.forEach((label, i) => label.classList.toggle("active", i === currentIndex));
+            cards.forEach((card, i) => card.classList.toggle("active-card", i === currentIndex));
+
+            // Update Popup Content
+            popupTitle.textContent = codexData[currentIndex].name;
+            popupImg.src = codexData[currentIndex].img;
+            popupBtn.onclick = () => {
+                document.getElementById(codexData[currentIndex].target).scrollIntoView({ behavior: 'smooth', block: 'center' });
+                popup.classList.remove("show");
+            };
+
+            // Show Popup
+            popup.classList.add("show");
         }
 
         labels.forEach((label, index) => label.addEventListener("click", () => setActiveIndex(index)));
+        
         notch.addEventListener("mousedown", () => isDragging = true);
         notch.addEventListener("touchstart", () => isDragging = true);
-        window.addEventListener("mouseup", () => isDragging = false);
-        window.addEventListener("touchend", () => isDragging = false);
+        window.addEventListener("mouseup", () => { isDragging = false; setTimeout(() => popup.classList.remove("show"), 3000); });
+        window.addEventListener("touchend", () => { isDragging = false; setTimeout(() => popup.classList.remove("show"), 3000); });
         
         window.addEventListener("mousemove", (e) => { if (isDragging) updateNotch(e.clientX); });
         window.addEventListener("touchmove", (e) => { if (isDragging) updateNotch(e.touches[0].clientX); });
@@ -97,7 +119,6 @@ document.addEventListener("DOMContentLoaded", () => {
         radios.forEach(r => r.addEventListener("change", calculateTotal));
         checkboxes.forEach(c => c.addEventListener("change", calculateTotal));
 
-        // Scroll-to-builder buttons
         document.querySelectorAll('.select-product-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 const selectValue = btn.dataset.select;
@@ -107,13 +128,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
                 });
                 calculateTotal();
-                // Smooth scroll is handled by the anchor link #checkout-builder
             });
         });
 
         checkoutBtn.addEventListener("click", () => {
-            // Placeholder for Tally integration
-            alert(`Proceeding to checkout with a total of $${totalPriceEl.textContent}. You will be redirected to Tally.`);
+            alert(`Proceeding to checkout with a total of $${totalPriceEl.textContent}. You will be redirected to Payhip.`);
         });
     }
 });
