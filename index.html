@@ -14,12 +14,11 @@
 </head>
 <body>
 
-    <!-- Background Layers -->
     <div class="bg-layer"></div>
     <canvas id="stardust-canvas"></canvas>
 
     <main>
-        <!-- 1. HEADER -->
+        <!-- HEADER -->
         <header class="main-header">
             <nav class="nav-links">
                 <a href="#home">Home</a>
@@ -27,22 +26,20 @@
                 <a href="#demo">The Demo</a>
             </nav>
             <div class="logo-container">
-                <!-- YOUR LOGO IMAGE -->
                 <img src="assets/logo.png" alt="AlignedInsightsEQ Logo" class="logo-img">
                 <h1 class="logo-text">AlignedInsightsEQ</h1>
             </div>
         </header>
 
-        <!-- 2. HERO SECTION -->
+        <!-- HERO -->
         <section id="home" class="hero-section">
             <h2 class="hero-tagline gradient-text-flow">Weaving several selected cosmologies into one unified translation</h2>
             <h1 class="hero-headline">A Symbolic Translation Layer for the Multidimensional Self</h1>
-            
-            <a href="#checkout-builder" class="btn-tactile hero-btn">Discover your top four non-negotiable anchors for the next 5 years. Access The Aligned Horizon.</a>
+            <a href="#codex" class="btn-tactile hero-btn">Discover your top four non-negotiable anchors for the next 5 years. Access The Aligned Horizon.</a>
         </section>
 
-        <!-- 3. THE INTRO -->
-        <section class="content-box intro-section">
+        <!-- INTRO (LIGHT GLASS) -->
+        <section class="light-glass intro-section">
             <p>It is easy to marvel at the beauty of life when everything flows with ease. Friction feels like a learning experience, dissolving as quickly as it comes. Our body and brain are locked in sync, bringing peace and resolution. We call this alignment, coherence, or integrated wisdom.</p>
             <p class="alternate-text">But what about when it doesn't feel that way?</p>
             <p>What does alignment look like when you are overwhelmed by the noise of daily life, wearing an identity mask that no longer fits, or trapped in repetitive emotional loops?</p>
@@ -50,8 +47,8 @@
             <p>The purpose of the Codex is to give you the methodology to hold two contradictory perspectives as two truths at the same time—expanding your perception, building new neural pathways, and showing you how your greatest friction points can become your most harmonious signatures.</p>
         </section>
 
-        <!-- 4. THE PRIVACY & FEATURES BRIDGE -->
-        <section class="content-box features-bridge">
+        <!-- FEATURES (LIGHT GLASS) -->
+        <section class="light-glass features-bridge">
             <h2 class="section-subtitle gradient-text-flow">Live. Local. Interactive. Privacy-Focused.</h2>
             <p class="features-intro">At AlignedInsightsEQ, we value your sovereignty. That is why every Codex is delivered as a single, self-contained web application that opens directly in your browser.</p>
             
@@ -75,7 +72,7 @@
             </div>
         </section>
 
-        <!-- 5. FREQUENCY SLIDER -->
+        <!-- SLIDER -->
         <section class="frequency-section">
             <div class="spectrum-container">
                 <div class="spectrum-labels">
@@ -87,23 +84,20 @@
                 <div class="spectrum-track" id="spectrumTrack">
                     <div class="spectrum-notch" id="spectrumNotch"></div>
                 </div>
-
-                <!-- THE POPUP CARD -->
                 <div id="sliderPopup" class="slider-popup">
-                    <img id="popupImg" src="assets/display-alignedhorizon.png" alt="Codex Book">
-                    <h4 id="popupTitle">Aligned Horizon</h4>
+                    <img id="popupImg" src="" alt="Codex Book">
+                    <h4 id="popupTitle">Codex Name</h4>
                     <button id="popupBtn" class="btn-tactile">Take me to this Codex</button>
                 </div>
             </div>
         </section>
 
-        <!-- 6. PRODUCT CARDS -->
-        <section class="products-section">
-            <!-- Product 1: Horizon -->
-            <div class="codex-card active-card" data-product="0" id="product-0">
+        <!-- PRODUCT CARDS (DARK GLASS) -->
+        <section id="codex" class="products-section">
+            <!-- Horizon -->
+            <div class="dark-glass codex-card active-card" data-product="0" id="product-0">
                 <div class="card-image-wrapper">
-                    <!-- YOUR IMAGE -->
-                    <img src="assets/display-alignedhorizon.png" alt="Aligned Horizon">
+                    <img src="assets/display-alignedhorizon.png" alt="Aligned Horizon" class="product-image">
                 </div>
                 <div class="card-content">
                     <div class="title-price-row">
@@ -114,15 +108,17 @@
                     <div class="card-deep-dive">
                         <p>It provides four foundational baseline anchors derived from your unique design to protect your peace, restore your equilibrium, and give your nervous system immediate, unshakeable safety as you navigate what comes next.</p>
                     </div>
-                    <button class="btn-tactile select-product-btn" data-select="horizon">Select & Customize</button>
+                    <div class="btn-container">
+                        <!-- REPLACE WITH YOUR PAYHIP LINK -->
+                        <a href="YOUR_PAYHIP_LINK" class="btn-tactile">Access The Aligned Horizon</a>
+                    </div>
                 </div>
             </div>
 
-            <!-- Product 2: Mini -->
-            <div class="codex-card" data-product="1" id="product-1">
+            <!-- Mini -->
+            <div class="dark-glass codex-card" data-product="1" id="product-1">
                 <div class="card-image-wrapper">
-                    <!-- YOUR IMAGE -->
-                    <img src="assets/display-alignmentmini.png" alt="Alignment Mini">
+                    <img src="assets/display-alignmentmini.png" alt="Alignment Mini" class="product-image">
                 </div>
                 <div class="card-content">
                     <div class="title-price-row">
@@ -133,15 +129,17 @@
                     <div class="card-deep-dive">
                         <p>Whether you are seeking ease in your relational dynamics, steady direction in your career evolution, or space for a creative bottleneck to dissolve, this focused lens illuminates both your inherited gifts and your earned strengths to restore natural, effortless momentum.</p>
                     </div>
-                    <button class="btn-tactile select-product-btn" data-select="mini">Select & Customize</button>
+                    <div class="btn-container">
+                        <!-- REPLACE WITH YOUR PAYHIP LINK -->
+                        <a href="YOUR_PAYHIP_LINK" class="btn-tactile">Select The Alignment Mini</a>
+                    </div>
                 </div>
             </div>
 
-            <!-- Product 3: Snapshot -->
-            <div class="codex-card" data-product="2" id="product-2">
+            <!-- Snapshot -->
+            <div class="dark-glass codex-card" data-product="2" id="product-2">
                 <div class="card-image-wrapper">
-                    <!-- YOUR IMAGE -->
-                    <img src="assets/display-alignmentsnapshot.png" alt="Alignment Snapshot">
+                    <img src="assets/display-alignmentsnapshot.png" alt="Alignment Snapshot" class="product-image">
                 </div>
                 <div class="card-content">
                     <div class="title-price-row">
@@ -152,15 +150,17 @@
                     <div class="card-deep-dive">
                         <p>It creates a complete mirror of your personal architecture—balancing your inherited harmonic signatures with your earned harmonic signatures. Alongside the adaptive survival strategies that served you along the way, it brings the most significant data points of your current reality into sharp focus.</p>
                     </div>
-                    <button class="btn-tactile select-product-btn" data-select="snapshot">Select & Customize</button>
+                    <div class="btn-container">
+                        <!-- REPLACE WITH YOUR PAYHIP LINK -->
+                        <a href="YOUR_PAYHIP_LINK" class="btn-tactile">Receive The Alignment Snapshot</a>
+                    </div>
                 </div>
             </div>
 
-            <!-- Product 4: Codex -->
-            <div class="codex-card" data-product="3" id="product-3">
+            <!-- Codex -->
+            <div class="dark-glass codex-card" data-product="3" id="product-3">
                 <div class="card-image-wrapper">
-                    <!-- YOUR IMAGE -->
-                    <img src="assets/display-alignmentcodex.png" alt="Alignment Codex">
+                    <img src="assets/display-alignmentcodex.png" alt="Alignment Codex" class="product-image">
                 </div>
                 <div class="card-content">
                     <div class="title-price-row">
@@ -171,86 +171,50 @@
                     <div class="card-deep-dive">
                         <p>It unfolds every layer of your existence simultaneously, weaving your birth design across selected inquiry frameworks. Paired with somatic grounding prompts, nervous system regulation utilities, and a 100% private, serverless HTML application built strictly for your device, it empowers you to live as your whole, integrated self.</p>
                     </div>
-                    <button class="btn-tactile select-product-btn" data-select="codex">Select & Customize</button>
+                    <div class="btn-container">
+                        <!-- REPLACE WITH YOUR PAYHIP LINK -->
+                        <a href="YOUR_PAYHIP_LINK" class="btn-tactile">Immerse in The Alignment Codex</a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- 7. CHECKOUT BUILDER -->
-        <section id="checkout-builder" class="checkout-container">
-            <h2 class="checkout-title">Customize Your Order</h2>
-            <p class="checkout-subtitle">Select your Codex and add any Companion deep-dives to your journey.</p>
-
-            <div class="checkout-steps">
-                <div class="step-group">
-                    <h3>1. Choose Your Codex</h3>
-                    <label class="radio-label">
-                        <input type="radio" name="codex_type" value="0" data-name="Aligned Horizon">
-                        <span>Aligned Horizon (Free)</span>
-                    </label>
-                    <label class="radio-label">
-                        <input type="radio" name="codex_type" value="15" data-name="Alignment Mini">
-                        <span>Alignment Mini ($15)</span>
-                    </label>
-                    <label class="radio-label">
-                        <input type="radio" name="codex_type" value="51" data-name="Alignment Snapshot">
-                        <span>Alignment Snapshot ($51)</span>
-                    </label>
-                    <label class="radio-label">
-                        <input type="radio" name="codex_type" value="87" data-name="Alignment Codex">
-                        <span>Alignment Codex ($87)</span>
-                    </label>
-                </div>
-
-                <div class="step-group">
-                    <h3>2. Add Codex Companions ($24 each)</h3>
-                    <label class="checkbox-label">
-                        <input type="checkbox" name="companion" value="24" data-name="Career Companion">
-                        <span>Career Companion</span>
-                    </label>
-                    <label class="checkbox-label">
-                        <input type="checkbox" name="companion" value="24" data-name="Relational Companion">
-                        <span>Relational Companion</span>
-                    </label>
-                    <label class="checkbox-label">
-                        <input type="checkbox" name="companion" value="24" data-name="Creative Companion">
-                        <span>Creative Companion</span>
-                    </label>
-                </div>
-
-                <div class="checkout-total">
-                    <h3>Total: $<span id="totalPrice">0</span></h3>
-                    <button class="btn-tactile" id="checkoutBtn" disabled>Proceed to Secure Checkout</button>
-                    <p class="error-text" id="errorText">Please select a Codex to continue.</p>
-                </div>
+        <!-- CODEX COMPANIONS SHOWROOM -->
+        <section class="dark-glass companion-section">
+            <h2 class="section-title gradient-text-flow" style="text-align: center;">Add Depth to Your Journey</h2>
+            <p style="text-align: center; margin-bottom: 2rem; color: #B8BFD9;">
+                Looking to explore a specific life theme? Add a Codex Companion for $24.<br>
+                <em>You can select these add-ons on the secure Payhip checkout page.</em>
+            </p>
+            
+            <div class="companion-grid">
+                <div class="companion-pill">Moon Phase & Emotional Superpower</div>
+                <div class="companion-pill">Personal Year Timeline +3 Years</div>
+                <div class="companion-pill">Couples Synergy</div>
+                <div class="companion-pill">Parts of Fortune Deep Dive</div>
+                <div class="companion-pill">What's My Archetype?</div>
+                <div class="companion-pill">Numerology Challenges & Pinnacles</div>
+                <div class="companion-pill">Midheaven & Life's Work Synthesis</div>
             </div>
         </section>
 
-        <!-- 8. BANNER -->
+        <!-- BANNER -->
         <section class="banner-section">
             <h2 class="gradient-text-flow">Transforms complexity into clarity</h2>
         </section>
 
-        <!-- 9. DEMO SECTION PLACEHOLDER -->
-        <section id="demo" class="demo-section">
-            <div class="content-box dark-glass">
-                <h2 class="section-title">See the Codex in motion.</h2>
-                <p class="features-intro">A live look inside. The demo shows you the interactive pieces at work — the natal chart, the synthesis insights, and the tools that bring the reading into the body.</p>
-                <div class="demo-placeholder">
-                    <p>(Interactive Demo Coming Soon)</p>
-                </div>
-            </div>
+        <!-- DEMO -->
+        <section id="demo" class="dark-glass demo-section">
+            <h2 class="section-title">See the Codex in motion.</h2>
+            <p class="features-intro">A live look inside. The demo shows you the interactive pieces at work — the natal chart, the synthesis insights, and the tools that bring the reading into the body.</p>
+            <div class="demo-placeholder"><p>(Interactive Demo Coming Soon)</p></div>
         </section>
 
-        <!-- 10. BRAND STORY -->
+        <!-- BRAND STORY -->
         <section id="story" class="story-section">
-            <!-- YOUR PHOTO -->
             <img src="assets/photo.png" alt="Yeshi / Cherry Pineapple" class="story-photo">
             
-            <!-- YOUR DNA IMAGE -->
-            <img src="assets/dna-helix.png" alt="DNA Double Helix" class="dna-image">
-            
-            <div class="content-box story-content">
+            <div class="dark-glass story-content">
                 <h2 class="section-title">The Story Behind AlignedInsightsEQ</h2>
                 <p>At birth, I was given the name Jessicia.</p>
                 <p>Jessicia carried me through many years of misalignment, confusion, and learning everything by learning what not to do first. I felt the full weight of being misunderstood and lost, weaving in and out of symbolic frameworks, spiritual systems, and psychological modalities like someone drinking water in a desert.</p>
@@ -262,39 +226,20 @@
                 <p>Jessicia is not removed; she evolved. She is the foundation that transmuted into my found clarity: Yeshi. I honor Jessicia with the understanding and compassion she worked so hard to find. Where Jessicia collected fragments of insight, unsure how to assemble them, Yeshi holds the entire picture. Yeshi is the grounded, clear-headed identity I earned through the work.</p>
                 <p>And then there is Cherry Pineapple Upsidedown Starshine. She is the playful embodiment of my creative expression, my newfound self-love, and the freedom that comes when you stop taking life so seriously.</p>
                 <p>This evolution is why the Alignment Codex is rooted in Identity Fluidity. We are not meant to stay in the same box forever. The Codex is designed to give the power back to you. You are a living spectrum. You are allowed to change, to contradict yourself, and to grow without feeling like you are losing who you are.</p>
-                
-                <h3>The Experiment</h3>
-                <p>I’ve always valued evidence and critical thinking. I wasn't interested in believing something simply because it sounded meaningful; I wanted to examine whether the patterns I perceived could withstand scrutiny. Over many months, I conducted an ongoing personal experiment. Without providing any chart data, I asked AI models to analyze me purely through conversation—to identify my recurring behavioral patterns, emotional tendencies, and blind spots. I questioned every conclusion. Only after did I introduce my chart information. The overlap was striking.</p>
-                
-                <h3>Building My Own Way Out</h3>
-                <p>I started building this Codex for my own personal reasons. I was learning the language of these frameworks while simultaneously experiencing the overwhelming feelings they were supposed to explain. I just needed a way to organize the data to understand myself. I started writing down the recurring themes, finding the overlaps, and translating the esoteric jargon into something my nervous system could actually process.</p>
-                <p>In building this translation for myself, I realized I had created something that could help others.</p>
-                <p>I don’t believe any single system can fully define a person. But when independent frameworks repeatedly illuminate the same themes, they invite us to pause, reflect, and ask meaningful questions about ourselves.</p>
-                <p><strong>Your Codex is a map of your own evolution.</strong></p>
-                <p>You don't need to collect another chart or fit into another box. You just need the language to understand the one you already have.</p>
             </div>
             
-            <!-- YOUR MASCOT -->
             <img src="assets/mascot.png" alt="Cherry Pineapple Upsidedown Starshine Mascot" class="mascot-img">
-        </section>
-
-        <!-- 11. FINAL CTA -->
-        <section class="final-cta">
-            <h2>Still deciding where to start?</h2>
-            <div class="cta-buttons">
-                <a href="#checkout-builder" class="btn-tactile select-product-btn" data-select="mini">Focus on one area — The Alignment Mini ($15)</a>
-                <a href="#checkout-builder" class="btn-tactile select-product-btn" data-select="codex">Explore the Full Codex ($87)</a>
-            </div>
         </section>
     </main>
 
-    <!-- 12. FOOTER -->
+    <!-- FOOTER WITH BOTH EMAILS AND SOCIALS -->
     <footer>
         <div class="footer-content">
             <div class="footer-links">
-                <a href="#">Instagram</a>
-                <a href="#">TikTok</a>
-                <a href="#">alignedinsightseq@gmail.com</a>
+                <a href="https://www.instagram.com/alignedinsightseq" target="_blank">Instagram</a>
+                <a href="https://vm.tiktok.com/ZP9yuFFDQycRX-MRLJZ/" target="_blank">TikTok</a>
+                <a href="mailto:alignedinsightseq@gmail.com">alignedinsightseq@gmail.com</a>
+                <a href="mailto:alignedinsightseq@proton.me">alignedinsightseq@proton.me</a>
             </div>
             <div class="footer-logo">AlignedInsightsEQ</div>
             <p class="legal-text">The Alignment Codex is a reflective symbolic tool and does not replace professional medical or psychological care. If you are experiencing a crisis, please contact local emergency services or a mental health hotline. © 2024 AlignedInsightsEQ. All rights reserved.</p>
