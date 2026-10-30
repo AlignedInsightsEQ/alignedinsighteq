@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AlignedInsightsEQ | The Alignment Codex</title>
     
-    <!-- Google Fonts: Playwrite NG Modern, Bellota, Gayathri -->
+    <!-- Google Fonts: Gabriela, Bellota, Livvic -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bellota:wght@300;400;700&family=Gayathri:wght@100;400;700&family=Playwrite+NG+Modern:wght@100..400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bellota:wght@300;400;700&family=Gabriela&family=Livvic:wght@300;400;600&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -27,6 +27,8 @@
                 <a href="#demo">The Demo</a>
             </nav>
             <div class="logo-container">
+                <!-- YOUR LOGO IMAGE -->
+                <img src="assets/logo.png" alt="AlignedInsightsEQ Logo" class="logo-img">
                 <h1 class="logo-text">AlignedInsightsEQ</h1>
             </div>
         </header>
@@ -85,15 +87,23 @@
                 <div class="spectrum-track" id="spectrumTrack">
                     <div class="spectrum-notch" id="spectrumNotch"></div>
                 </div>
+
+                <!-- THE POPUP CARD -->
+                <div id="sliderPopup" class="slider-popup">
+                    <img id="popupImg" src="assets/display-alignedhorizon.png" alt="Codex Book">
+                    <h4 id="popupTitle">Aligned Horizon</h4>
+                    <button id="popupBtn" class="btn-tactile">Take me to this Codex</button>
+                </div>
             </div>
         </section>
 
         <!-- 6. PRODUCT CARDS -->
         <section class="products-section">
             <!-- Product 1: Horizon -->
-            <div class="codex-card active-card" data-product="0">
+            <div class="codex-card active-card" data-product="0" id="product-0">
                 <div class="card-image-wrapper">
-                    <div class="image-placeholder">Image: display-aligned-horizon.png</div>
+                    <!-- YOUR IMAGE -->
+                    <img src="assets/display-alignedhorizon.png" alt="Aligned Horizon">
                 </div>
                 <div class="card-content">
                     <div class="title-price-row">
@@ -109,9 +119,10 @@
             </div>
 
             <!-- Product 2: Mini -->
-            <div class="codex-card" data-product="1">
+            <div class="codex-card" data-product="1" id="product-1">
                 <div class="card-image-wrapper">
-                    <div class="image-placeholder">Image: display-alignment-mini.png</div>
+                    <!-- YOUR IMAGE -->
+                    <img src="assets/display-alignmentmini.png" alt="Alignment Mini">
                 </div>
                 <div class="card-content">
                     <div class="title-price-row">
@@ -127,9 +138,10 @@
             </div>
 
             <!-- Product 3: Snapshot -->
-            <div class="codex-card" data-product="2">
+            <div class="codex-card" data-product="2" id="product-2">
                 <div class="card-image-wrapper">
-                    <div class="image-placeholder">Image: display-alignment-snapshot.png</div>
+                    <!-- YOUR IMAGE -->
+                    <img src="assets/display-alignmentsnapshot.png" alt="Alignment Snapshot">
                 </div>
                 <div class="card-content">
                     <div class="title-price-row">
@@ -145,9 +157,10 @@
             </div>
 
             <!-- Product 4: Codex -->
-            <div class="codex-card" data-product="3">
+            <div class="codex-card" data-product="3" id="product-3">
                 <div class="card-image-wrapper">
-                    <div class="image-placeholder">Image: display-alignment-codex.png</div>
+                    <!-- YOUR IMAGE -->
+                    <img src="assets/display-alignmentcodex.png" alt="Alignment Codex">
                 </div>
                 <div class="card-content">
                     <div class="title-price-row">
@@ -169,7 +182,6 @@
             <p class="checkout-subtitle">Select your Codex and add any Companion deep-dives to your journey.</p>
 
             <div class="checkout-steps">
-                <!-- Step 1 -->
                 <div class="step-group">
                     <h3>1. Choose Your Codex</h3>
                     <label class="radio-label">
@@ -190,7 +202,6 @@
                     </label>
                 </div>
 
-                <!-- Step 2 -->
                 <div class="step-group">
                     <h3>2. Add Codex Companions ($24 each)</h3>
                     <label class="checkbox-label">
@@ -207,7 +218,6 @@
                     </label>
                 </div>
 
-                <!-- Step 3 -->
                 <div class="checkout-total">
                     <h3>Total: $<span id="totalPrice">0</span></h3>
                     <button class="btn-tactile" id="checkoutBtn" disabled>Proceed to Secure Checkout</button>
@@ -234,8 +244,11 @@
 
         <!-- 10. BRAND STORY -->
         <section id="story" class="story-section">
-            <div class="story-photo-placeholder">Image: photo.png</div>
-            <div class="dna-placeholder">Image: dna-helix.png</div>
+            <!-- YOUR PHOTO -->
+            <img src="assets/photo.png" alt="Yeshi / Cherry Pineapple" class="story-photo">
+            
+            <!-- YOUR DNA IMAGE -->
+            <img src="assets/dna-helix.png" alt="DNA Double Helix" class="dna-image">
             
             <div class="content-box story-content">
                 <h2 class="section-title">The Story Behind AlignedInsightsEQ</h2>
@@ -260,7 +273,9 @@
                 <p><strong>Your Codex is a map of your own evolution.</strong></p>
                 <p>You don't need to collect another chart or fit into another box. You just need the language to understand the one you already have.</p>
             </div>
-            <div class="mascot-placeholder">Image: mascot.png</div>
+            
+            <!-- YOUR MASCOT -->
+            <img src="assets/mascot.png" alt="Cherry Pineapple Upsidedown Starshine Mascot" class="mascot-img">
         </section>
 
         <!-- 11. FINAL CTA -->
