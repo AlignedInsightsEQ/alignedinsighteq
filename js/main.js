@@ -6,19 +6,38 @@ document.addEventListener("DOMContentLoaded", () => {
         const ctx = canvas.getContext('2d');
         let width = canvas.width = window.innerWidth;
         let height = canvas.height = window.innerHeight;
-        window.addEventListener('resize', () => { width = canvas.width = window.innerWidth; height = canvas.height = window.innerHeight; });
+        
+        window.addEventListener('resize', () => { 
+            width = canvas.width = window.innerWidth; 
+            height = canvas.height = window.innerHeight; 
+        });
+
         const particles = [];
         for (let i = 0; i < 48; i++) {
-            particles.push({ x: Math.random() * width, y: Math.random() * height, size: Math.random() * 2 + 0.5, speedX: Math.random() * 0.5 - 0.25, speedY: Math.random() * 0.5 - 0.25, opacity: Math.random() * 0.5 + 0.2 });
+            particles.push({ 
+                x: Math.random() * width, 
+                y: Math.random() * height, 
+                size: Math.random() * 2 + 0.5, 
+                speedX: Math.random() * 0.5 - 0.25, 
+                speedY: Math.random() * 0.5 - 0.25, 
+                opacity: Math.random() * 0.5 + 0.2 
+            });
         }
+
         function animate() {
             ctx.clearRect(0, 0, width, height);
             particles.forEach(p => {
-                p.x += p.speedX; p.y += p.speedY;
-                if (p.x > width) p.x = 0; if (p.x < 0) p.x = width;
-                if (p.y > height) p.y = 0; if (p.y < 0) p.y = height;
-                ctx.beginPath(); ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(253, 226, 138, ${p.opacity})`; ctx.fill();
+                p.x += p.speedX; 
+                p.y += p.speedY;
+                if (p.x > width) p.x = 0; 
+                if (p.x < 0) p.x = width;
+                if (p.y > height) p.y = 0; 
+                if (p.y < 0) p.y = height;
+                
+                ctx.beginPath(); 
+                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(253, 226, 138, ${p.opacity})`; 
+                ctx.fill();
             });
             requestAnimationFrame(animate);
         }
@@ -46,6 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let isDragging = false;
         const totalSteps = labels.length - 1;
         let currentIndex = 0;
+        let hideTimeout;
 
         function setActiveIndex(index) {
             currentIndex = Math.max(0, Math.min(index, totalSteps));
@@ -65,14 +85,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // Show Popup
             popup.classList.add("show");
+
+            // Auto-hide popup after 4 seconds if not dragging
+            clearTimeout(hideTimeout);
+            if (!isDragging) {
+                hideTimeout = setTimeout(() => {
+                    popup.classList.remove("show");
+                }, 4000);
+            }
         }
 
-        labels.forEach((label, index) => label.addEventListener("click", () => setActiveIndex(index)));
+        labels.forEach((label, index) => {
+            label.addEventListener("click", () => setActiveIndex(index));
+        });
         
-        notch.addEventListener("mousedown", () => isDragging = true);
-        notch.addEventListener("touchstart", () => isDragging = true);
-        window.addEventListener("mouseup", () => { isDragging = false; setTimeout(() => popup.classList.remove("show"), 3000); });
-        window.addEventListener("touchend", () => { isDragging = false; setTimeout(() => popup.classList.remove("show"), 3000); });
+        notch.addEventListener("mousedown", () => { isDragging = true; clearTimeout(hideTimeout); });
+        notch.addEventListener("touchstart", () => { isDragging = true; clearTimeout(hideTimeout); });
+        
+        window.addEventListener("mouseup", () => { 
+            isDragging = false; 
+            hideTimeout = setTimeout(() => popup.classList.remove("show"), 4000);
+        });
+        window.addEventListener("touchend", () => { 
+            isDragging = false; 
+            hideTimeout = setTimeout(() => popup.classList.remove("show"), 4000);
+        });
         
         window.addEventListener("mousemove", (e) => { if (isDragging) updateNotch(e.clientX); });
         window.addEventListener("touchmove", (e) => { if (isDragging) updateNotch(e.touches[0].clientX); });
@@ -80,59 +117,13 @@ document.addEventListener("DOMContentLoaded", () => {
         function updateNotch(clientX) {
             const rect = track.getBoundingClientRect();
             let x = clientX - rect.left;
-            if (x < 0) x = 0; if (x > rect.width) x = rect.width;
+            if (x < 0) x = 0; 
+            if (x > rect.width) x = rect.width;
             const index = Math.round((x / rect.width) * totalSteps);
             setActiveIndex(index);
         }
+        
+        // Initialize at 0
         setActiveIndex(0);
-    }
-
-    // --- 3. CHECKOUT BUILDER MATH ---
-    const radios = document.querySelectorAll('input[name="codex_type"]');
-    const checkboxes = document.querySelectorAll('input[name="companion"]');
-    const totalPriceEl = document.getElementById("totalPrice");
-    const checkoutBtn = document.getElementById("checkoutBtn");
-    const errorText = document.getElementById("errorText");
-
-    if (checkoutBtn) {
-        function calculateTotal() {
-            let total = 0;
-            let selectedCodex = null;
-            
-            radios.forEach(radio => {
-                if (radio.checked) { total += parseInt(radio.value); selectedCodex = radio.dataset.name; }
-            });
-            checkboxes.forEach(box => {
-                if (box.checked) total += parseInt(box.value);
-            });
-
-            totalPriceEl.textContent = total;
-            if (selectedCodex) {
-                checkoutBtn.disabled = false;
-                errorText.style.display = "none";
-            } else {
-                checkoutBtn.disabled = true;
-                errorText.style.display = "block";
-            }
-        }
-
-        radios.forEach(r => r.addEventListener("change", calculateTotal));
-        checkboxes.forEach(c => c.addEventListener("change", calculateTotal));
-
-        document.querySelectorAll('.select-product-btn').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                const selectValue = btn.dataset.select;
-                radios.forEach(r => {
-                    if (r.dataset.name.toLowerCase().includes(selectValue) || r.value === selectValue) {
-                        r.checked = true;
-                    }
-                });
-                calculateTotal();
-            });
-        });
-
-        checkoutBtn.addEventListener("click", () => {
-            alert(`Proceeding to checkout with a total of $${totalPriceEl.textContent}. You will be redirected to Payhip.`);
-        });
     }
 });
